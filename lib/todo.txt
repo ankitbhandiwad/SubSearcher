@@ -1,0 +1,4 @@
+drop down for languages
+require a selected directory //DONE
+label search buttons //DONE
+make home page pretty
