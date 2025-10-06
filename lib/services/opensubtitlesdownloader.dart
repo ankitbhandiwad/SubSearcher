@@ -51,6 +51,8 @@ class DownloadOpenSubtitles
   // }
 
     Future<void> searchSubtitles() async {
+      await dotenv.load(fileName: ".env");
+      final apiKey = dotenv.env['API_KEY'];
     try {
       Response response = await Dio().get(
         "https://subsearcherbackend.onrender.com/subtitles",
@@ -64,7 +66,7 @@ class DownloadOpenSubtitles
         options: Options(
           followRedirects: true,
           headers: {
-            "Api-Key": "jnVRM9kQIWonBnsS108IAk58ZcWLLukO",
+            "Api-Key": apiKey,
             "User-Agent": "SubSearcher v1.0.0",
           },
           responseType: ResponseType.json,
